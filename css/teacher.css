@@ -1,0 +1,26 @@
+body{
+    background-image: url(photo/teacher.png);
+}
+.sign{
+    background-color: aqua;
+    background-color: aquamarine;
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 300px;
+    height: 200px;
+    font-size: 40px;
+    border-radius: 30px;
+}
+.login{
+    background-color:rgb(32, 52, 225);
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 300px;
+    height: 200px;
+    font-size: 40px;
+    border-radius: 30px;
+}

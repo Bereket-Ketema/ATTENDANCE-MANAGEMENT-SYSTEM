@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1 style="text-align: center;">Item List</h1>
+    <div style="display: flex; justify-content:center;align-items:center;">
+        <table style="width:900px;border:1px solid black ;border-collapse: collapse;">
+            <thead>
+                <tr style="border: 1px solid black;
+  border-collapse: collapse;">
+                    <th style="border: 1px solid black;
+  border-collapse: collapse;">Name</th>
+                    <th style="border: 1px solid black;
+  border-collapse: collapse;">lastname</th>
+                    <th style="border: 1px solid black;
+  border-collapse: collapse;">user_name</th>
+                    <th style="border: 1px solid black;
+  border-collapse: collapse;">ID</th>
+                    <th style="border: 1px solid black;
+  border-collapse: collapse;">Department</th>
+                    <th style="border: 1px solid black;
+  border-collapse: collapse;">Attendance</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr style="border: 1px solid black;
+  border-collapse: collapse;">
+                    <td style="border: 1px solid black;
+  border-collapse: collapse;">{{ item.fname }}</td>
+                    <td style="border: 1px solid black;
+  border-collapse: collapse;">{{ item.lname }}</td>
+                    <td style="border: 1px solid black;
+  border-collapse: collapse;">{{ item.users }}</td>
+                    <td style="border: 1px solid black;
+  border-collapse: collapse;">{{ item.ts_id }}</td>
+                    <td style="border: 1px solid black;
+  border-collapse: collapse;">{{ item.dept }}</td>
+                    <td><input type="radio"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

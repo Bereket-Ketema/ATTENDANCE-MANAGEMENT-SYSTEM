@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <h1>SELECT SECTION</h1><br><br>
+    {%for sec in sections%}
+    <form action="item_list">
+        <button>{{sec}}</button><br><br>
+    </form>
+    {% endfor %}
+</body>
+</html>

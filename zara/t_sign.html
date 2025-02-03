@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static %}
+    <link rel="stylesheet" href="{% static 't_signin.css' %}">
+</head>
+<body>
+    <div class="head">
+        <h1>ONLY FOR NEW TEACHERS</h1>
+        <h1 class="heads">TEACHERS SIGN PAGE</h1>
+        <form action="teacher" method="get" id="teacher">
+            FIRST NAME: <input type="text" placeholder="name" name="fname"><br><br>
+            LAST NAME:  <input type="text" placeholder="lastname" name="lname"><br><br>
+            TEACHER_ID: <input type="text" placeholder="ugr/47543/15" name="t_id"><br><br>
+            GENDER:
+            <select name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br><br>
+            PASSWORD: <input type="password" name="passwords"><br><br>
+            DEPARTMENT: <input type="text" name="department" ><br><br>
+            <input type="submit" id="submit" >
+            <input type="reset" id="reset">
+        </form>
+        <div id="message" class="messag">submitted successfully</div>
+    </div>
+    <script src="{% static 'animate.js' %}"></script>
+</body>
+</html>

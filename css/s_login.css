@@ -1,0 +1,46 @@
+.head{
+    text-align: center;
+    background-color: rgb(196, 120, 133);
+    display: inline-block;
+    width: 500px;
+    height: 420px;
+    margin-left: 500px;
+    margin-top: 100px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgb(101, 75, 75);
+}
+.heads{
+    background-color: rgb(213, 148, 63);
+}
+#reset{
+    background-color:rgb(142, 3, 3) ;
+    border-radius: 10px;
+    color:white;
+    border-color: none;
+    cursor: pointer;
+    box-shadow:5px 5px 5px rgb(18, 18, 18);
+}
+#submit{
+    background-color: rgb(3, 3, 164);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    box-shadow:5px 5px 5px rgb(18, 18, 18);
+  }
+#submit:hover{
+    color: rgb(3, 3, 164);
+    background-color: white;
+    transition: 0.5s;
+}
+
+#reset:hover{
+    color:rgb(142, 3, 3);
+    background-color:white;
+    transition: 0.5s;
+}
+#submit:active{
+    opacity:0.4;
+}
+#reset:active{
+    opacity:0.4;
+}

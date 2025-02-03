@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static %}
+    <link rel="stylesheet" href="{% static 's_login.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="head" style="height:500px">
+        <H1>ONLY FOR NEW STUDENTS</H1>
+        <h1 class="heads">STUDENT SIGN PAGE</h1>
+        <form action="student_sign" >
+            First Name: <input type="text" placeholder="name" name="fname"><br><br>
+            Last Name:  <input type="text" placeholder="lastname" name="lname"><br><br>
+            User Name:  <input type="text" placeholder="@username" name="user"><br><br>
+            ID:  <input type="text" placeholder="ugr/4893" name="id"><br><br>
+            Gender:
+            <select name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br><br>
+            PASSWORD: <input type="password" placeholder="1234" name="passwords"><br><br>
+            DEPARTMENT: <input type="text" placeholder="Software" name="department" ><br><br>
+            SECTION: <input type="text" placeholder="1" name="section">
+            <input type="submit" id="submit">
+            <input type="reset" id="reset">
+        </form>
+    </div>
+</body>
+</html>
