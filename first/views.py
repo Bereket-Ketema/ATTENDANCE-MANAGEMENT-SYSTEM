@@ -122,11 +122,11 @@ def teacher_login(request):
         db.commit()
         mycursor.close()
         db.close()
-        if request.method == 'POST':
-            if(len(values)>0):
-                sections(sec)
-                return render(request,'section.html',{'sections':sec})
-        return render(request,'t_login.html')  
+        if(len(values)>0):
+            sections(sec)
+            return render(request,'section.html',{'sections':sec})
+        else:
+            return render(request,'t_login.html',{'error':"Incorrect username or password"})
 
 def section(request):
     section=Section()
