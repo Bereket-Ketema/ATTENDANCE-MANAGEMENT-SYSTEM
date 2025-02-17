@@ -18,19 +18,18 @@ class Section(models.Model):
     name=models.CharField(max_length=100)
 
 class Are(models.Model):
-     s_name=models.CharField(max_length=100)
-     s_lname=models.CharField(max_length=100)
-     s_id=models.CharField(max_length=100)
+     t_name=models.CharField(max_length=100)
+     t_lname=models.CharField(max_length=100)
+     t_id=models.CharField(max_length=100)
      gender=models.CharField(max_length=100)
-     password=models.CharField(max_length=100)
+     passwordss=models.CharField(max_length=100)
      department=models.CharField(max_length=100)
      def __str__(self):
-        return self.s_name
+        return self.t_name,self.t_lname,self.gender,self.passwordss,self.department
 
 class Item(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-
     def __str__(self):
         return self.name
