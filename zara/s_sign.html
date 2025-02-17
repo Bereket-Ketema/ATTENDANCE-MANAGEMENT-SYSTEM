@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {%load static %}
+    {% load static %}
     <link rel="stylesheet" href="{% static 's_login.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Sign-Up</title>
 </head>
 <body>
-    <div class="head" style="height:500px">
-        <H1>ONLY FOR NEW STUDENTS</H1>
-        <h1 class="heads">STUDENT SIGN PAGE</h1>
-        <form action="student_sign" >
-            First Name: <input type="text" placeholder="name" name="fname"><br><br>
-            Last Name:  <input type="text" placeholder="lastname" name="lname"><br><br>
-            User Name:  <input type="text" placeholder="@username" name="user"><br><br>
-            ID:  <input type="text" placeholder="ugr/4893" name="id"><br><br>
-            Gender:
-            <select name="gender">
+    <div class="container">
+        <!-- Titles -->
+        <h1>ONLY FOR NEW STUDENTS</h1>
+        <h1 class="sub-heading">Student Sign-Up Page</h1>
+
+        <!-- Sign-Up Form -->
+        <form action="student_sign" method="post">
+            {% csrf_token %}
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" placeholder="First name" name="fname" required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" placeholder="Last name" name="lname" required>
+
+            <label for="user">User Name:</label>
+            <input type="text" id="user" placeholder="@username" name="user" required>
+
+            <label for="id">ID:</label>
+            <input type="text" id="id" placeholder="e.g., ugr/4893" name="id" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
-            </select><br><br>
-            PASSWORD: <input type="password" placeholder="1234" name="passwords"><br><br>
-            DEPARTMENT: <input type="text" placeholder="Software" name="department" ><br><br>
-            SECTION: <input type="text" placeholder="1" name="section">
-            <input type="submit" id="submit">
-            <input type="reset" id="reset">
+            </select>
+
+            <label for="passwords">Password:</label>
+            <input type="password" id="passwords" placeholder="Password" name="passwords" required>
+
+            <label for="department">Department:</label>
+            <input type="text" id="department" placeholder="e.g., Software" name="department" required>
+
+            <label for="section">Section:</label>
+            <input type="text" id="section" placeholder="e.g., 1" name="section" required>
+
+            <input type="submit" id="submit" value="Submit">
+            <input type="reset" id="reset" value="Reset">
         </form>
     </div>
 </body>

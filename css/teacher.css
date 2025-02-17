@@ -1,26 +1,56 @@
-body{
-    background-image: url(photo/teacher.png);
-}
-.sign{
-    background-color: aqua;
-    background-color: aquamarine;
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     margin: 0;
-    position: absolute;
-    top: 30%;
-    left: 20%;
-    width: 300px;
-    height: 200px;
-    font-size: 40px;
-    border-radius: 30px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
 }
-.login{
-    background-color:rgb(32, 52, 225);
-    margin: 0;
-    position: absolute;
-    top: 30%;
-    left: 50%;
+
+.container {
+    background: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 300px;
-    height: 200px;
-    font-size: 40px;
-    border-radius: 30px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #6a11cb;
+}
+
+form {
+    margin-bottom: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #6a11cb;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2575fc;
+}
+
+.login {
+    background-color: #2575fc;
+}
+
+.login:hover {
+    background-color: #6a11cb;
 }

@@ -30,9 +30,9 @@ def student_login(request):
     database="student"
 )
     studs=Use()
-    studs.users=request.GET['users']
-    studs.passwords=request.GET['pass']
-    studs.sect=request.GET['section']
+    studs.users=request.POST['users']
+    studs.passwords=request.POST['pass']
+    studs.sect=request.POST['section']
     sections="section"+studs.sect
     mycursor=db.cursor()
     mycursor.execute("SELECT s_name,s_lname,department FROM {} WHERE user = %s AND password= %s".format(sections) ,[studs.users,studs.passwords])
@@ -58,14 +58,14 @@ def teacher(request):
     database="attendance"
 )
  
-    if request.method == 'GET':
+    if request.method == 'POST':
         teacher=Use()
-        teacher.fname=(request.GET['fname'])
-        teacher.lname=(request.GET['lname'])
-        teacher.users=(request.GET['t_id'])
-        teacher.gender=(request.GET['gender'])
-        teacher.passwords=(request.GET['passwords'])
-        teacher.dept=(request.GET['department'])
+        teacher.fname=(request.POST['fname'])
+        teacher.lname=(request.POST['lname'])
+        teacher.users=(request.POST['t_id'])
+        teacher.gender=(request.POST['gender'])
+        teacher.passwords=(request.POST['passwords'])
+        teacher.dept=(request.POST['department'])
         mycursor=db.cursor()
         mycursor.execute("INSERT INTO Teacher VALUES (%s, %s,%s,%s, %s,%s)",(teacher.fname,teacher.lname,teacher.users,teacher.gender,teacher.passwords,teacher.dept))
         db.commit()
@@ -84,14 +84,14 @@ def student_sign(request):
     database="student"
 )
     student=Use()
-    student.fname=(request.GET['fname'])
-    student.lname=(request.GET['lname'])
-    student.users=(request.GET['user'])
-    student.gender=(request.GET['gender'])
-    student.passwords=(request.GET['passwords'])
-    student.dept=(request.GET['department'])
-    student.s_id=(request.GET['id'])
-    student.sect=request.GET['section']
+    student.fname=(request.POST['fname'])
+    student.lname=(request.POST['lname'])
+    student.users=(request.POST['user'])
+    student.gender=(request.POST['gender'])
+    student.passwords=(request.POST['passwords'])
+    student.dept=(request.POST['department'])
+    student.s_id=(request.POST['id'])
+    student.sect=request.POST['section']
     sections="section"+student.sect
     mycursor=db.cursor()
     mycursor.execute("INSERT INTO {} VALUES (%s,%s,%s,%s,%s,%s,%s)".format(sections),(student.fname,student.lname,student.users,student.s_id,student.gender,student.passwords,student.dept))
@@ -114,15 +114,15 @@ def teacher_login(request):
     database="attendance"
 )
         sec=[]
-        users=request.GET['t_ids']
-        passwords=request.GET['passwordss']
+        users=request.POST['t_ids']
+        passwords=request.POST['passwordss']
         mycursor=db.cursor()
         mycursor.execute("SELECT t_id,password FROM teacher WHERE t_id = %s AND password= %s" ,[users,passwords])
         values=mycursor.fetchall()
         db.commit()
         mycursor.close()
         db.close()
-        if request.method == 'GET':
+        if request.method == 'POST':
             if(len(values)>0):
                 sections(sec)
                 return render(request,'section.html',{'sections':sec})
@@ -140,7 +140,7 @@ def sec(request):
     database="student"
 )
     studs=Use()
-    studs.sect=request.GET['section']
+    studs.sect=request.POST['section']
     studs.sect=str(studs.sect)
     sections="section"+studs.sect
     mycursor=db.cursor()

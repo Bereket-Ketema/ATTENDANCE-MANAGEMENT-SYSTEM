@@ -1,36 +1,86 @@
-.head{
-     text-align: center;
-     font-size: 30px; 
-     background-color:blueviolet;
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
 }
-.messag{
-    display: none; /* Initially hidden */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px 30px;
-    background-color: #28a745;
-    color: red;
-    font-size: 1.5em;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    animation: fadeInOut 3s ease-in-out; /* Animation duration */
+
+/* Container */
+.container {
+  background: #ffffff;
+  color: #333;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
 }
-@keyframes fadeInOut {
-    0% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0.8);
-    }
-    30% {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
-    70% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(1.2);
-    }
-  }
+
+/* Heading */
+.container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #6a11cb;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 14px;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-submit {
+  background-color: #6a11cb;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #2575fc;
+}
+
+.btn-reset {
+  background-color: #bbb;
+}
+
+/* Error Message */
+#message {
+  display: none;
+  color: red;
+  margin-top: 10px;
+}

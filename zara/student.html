@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {%load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
     <link rel="stylesheet" href="{% static 'student.css' %}">
-    <title>Document</title>
+    <title>Student Portal</title>
 </head>
 <body>
-    <form action="study">
-        <button class="sign">SIGN UP</button>
-    </form><br>
-    <form action="stud_log">
-        <button class="login">LOG IN</button>
-    </form>
+    <div class="container">
+        <!-- Title -->
+        <h1>Student Portal</h1>
+        <p>Welcome! Please sign up or log in to continue.</p>
+
+        <!-- Sign-Up Form -->
+        <form action="study">
+            <button class="sign">Sign Up</button>
+        </form>
+
+        <!-- Log-In Form -->
+        <form action="stud_log">
+            <button class="login">Log In</button>
+        </form>
+    </div>
 </body>
 </html>

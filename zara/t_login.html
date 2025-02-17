@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
-    {%load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Login</title>
+    {% load static %}
     <link rel="stylesheet" href="{% static 't_login.css' %}">
 </head>
 <body>
-    <div class="head">
-        <h1 class="heads">TEACHERS SIGN PAGE</h1>
-        <form action="teacher_login" id="forms" method="get">
-            USER NAME/ID:  <input type="username" placeholder="@username" required name="t_ids"><br><br>
-            PASSWORD: <input type="password" placeholder="password" required name="passwordss"><br><br>
-            <input type="submit" id="submit">
-            <input type="reset" id="reset">
+    <div class="container">
+        <h1>Teacher Login</h1>
+        <form action="teacher_login" id="forms" method="post">
+            {% csrf_token %}
+            <div>
+                <label for="username">Username/ID:</label>
+                <input type="text" id="username" name="t_ids" placeholder="@username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="passwordss" placeholder="password" required>
+            </div>
+            <button type="submit" class="btn btn-submit">Sign In</button>
+            <button type="reset" class="btn btn-reset">Reset</button>
         </form>
-        <div id="message" class="messag" >Incorrect username or password </div>
+        <div id="message">Incorrect username or password</div>
     </div>
-    <!-- <script src="{% static 'incorrect.js' %}"></script> -->
 </body>
 </html>

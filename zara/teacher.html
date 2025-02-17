@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
-    {%load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Portal</title>
+    {% load static %}
     <link rel="stylesheet" href="{% static 'teacher.css' %}">
 </head>
 <body>
-    <h1>Teacher</h1>
-    <form action="teach">
-        <button class="sign">SIGN UP</button>
-    </form>
-        
-   <form action="t_login">
-    <button class="login">LOG IN</button>
-   </form>
+    <div class="container">
+        <!-- Title (h1) placed at the top -->
+        <h1>Teacher Portal</h1>
+
+        <!-- Signup Button -->
+        <form action="teach">
+            <button class="sign">Sign Up</button>
+        </form>
+
+        <!-- Login Button -->
+        <form action="t_login">
+            <button class="login">Log In</button>
+        </form>
+    </div>
 </body>
 </html>

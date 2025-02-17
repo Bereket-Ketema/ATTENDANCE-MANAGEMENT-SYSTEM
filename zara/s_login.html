@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Log In</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 's_sign.css' %}">
 </head>
 <body>
-    <div class="head" style="text-align: center; font-size: 30px; background-color:blueviolet">
-        <h1 class="heads">STUDENT LOG IN PAGE</h1>
-        <form action="student_login" method="get">
-            USER NAME:  <input type="username" placeholder="@username" required name="users"><br><br>
-            PASSWORD: <input type="password" placeholder="password" required name="pass"><br><br>
-            SECTION:<input type="text" placeholder="1" required name="section">
-            <input type="submit" id="submit">
-            <input type="reset" id="reset"><br><br>
-            {{error}}
+    <div class="container">
+        <h1>STUDENT LOG IN PAGE</h1>
+        <form action="student_login" method="post">
+            {% csrf_token %}
+            <label for="users">USER NAME:</label>
+            <input type="text" id="users" placeholder="@username" required name="users">
+
+            <label for="pass">PASSWORD:</label>
+            <input type="password" id="pass" placeholder="password" required name="pass">
+
+            <label for="section">SECTION:</label>
+            <input type="text" id="section" placeholder="1" required name="section">
+
+            <input type="submit" id="submit" value="Log In">
+            <input type="reset" id="reset" value="Reset">
+
+            <div class="error-message">{{error}}</div>
         </form>
     </div>
-    
 </body>
 </html>

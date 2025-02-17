@@ -1,29 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {%load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Sign-Up</title>
+    {% load static %}
     <link rel="stylesheet" href="{% static 't_signin.css' %}">
 </head>
 <body>
-    <div class="head">
+    <div class="container">
+        <!-- Title -->
         <h1>ONLY FOR NEW TEACHERS</h1>
-        <h1 class="heads">TEACHERS SIGN PAGE</h1>
-        <form action="teacher" method="get" id="teacher">
-            FIRST NAME: <input type="text" placeholder="name" name="fname"><br><br>
-            LAST NAME:  <input type="text" placeholder="lastname" name="lname"><br><br>
-            TEACHER_ID: <input type="text" placeholder="ugr/47543/15" name="t_id"><br><br>
-            GENDER:
-            <select name="gender">
+        <h2 class="sub-heading">Teachers Sign-Up Page</h2>
+
+        <!-- Sign-Up Form -->
+        <form action="teacher" method="post" id="teacher">
+            {% csrf_token %}
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" placeholder="First name" name="fname" required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" placeholder="Last name" name="lname" required>
+
+            <label for="t_id">Teacher ID:</label>
+            <input type="text" id="t_id" placeholder="e.g., ugr/47543/15" name="t_id" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
-            </select><br><br>
-            PASSWORD: <input type="password" name="passwords"><br><br>
-            DEPARTMENT: <input type="text" name="department" ><br><br>
-            <input type="submit" id="submit" >
-            <input type="reset" id="reset">
+            </select>
+
+            <label for="passwords">Password:</label>
+            <input type="password" id="passwords" placeholder="Password" name="passwords" required>
+
+            <label for="department">Department:</label>
+            <input type="text" id="department" placeholder="e.g., Mathematics" name="department" required>
+
+            <input type="submit" id="submit" value="Submit">
+            <input type="reset" id="reset" value="Reset">
         </form>
-        <div id="message" class="messag">submitted successfully</div>
+
+        <!-- Success Message -->
+        <div id="message" class="messag">Submitted successfully</div>
     </div>
+
+    <!-- JS Script -->
     <script src="{% static 'animate.js' %}"></script>
 </body>
 </html>
