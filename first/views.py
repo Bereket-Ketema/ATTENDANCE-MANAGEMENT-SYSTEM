@@ -2,7 +2,6 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 import mysql.connector
 
-
 from .models import  Item, Section, Use,Are
 # Create your views here.
 def welcome(request):

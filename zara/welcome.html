@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {%load static %}
+    {% load static %}
     <link rel="stylesheet" href="{% static 'welcome.css' %}">
-    <title>Welcome</title>
+    <title>Attendance Management System</title>
+
 </head>
 <body>
-    {%block content%}
-    <h1 class="header">Attendance Management system</h1>
-    <form action="login">
-        <button class="welcome">WELCOME</button>
-    </form>
-    {% endblock %}
-
+    <div class="container">
+        <h1 class="header">Attendance Management System</h1>
+        <form action="login">
+            <button class="welcome">WELCOME</button>
+        </form>
+    </div>
 </body>
 </html>

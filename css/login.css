@@ -1,16 +1,52 @@
-body{
-    background-image: url(photo/login.png);
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
-.users{
-    font-size:50px;
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.users {
+    background: #2575fc;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
     cursor: pointer;
-    box-shadow:5px 5px 5px rgb(48, 162, 77);
+    margin: 10px 0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
-.users:hover{
-    cursor: pointer;
-    color: tomato;
-    text-decoration: underline;
+
+.users:hover {
+    transform: scale(1.1);
+    background: #6a11cb;
 }
-p{
-    display: inline-block;
+
+.users:active {
+    transform: scale(1.05);
+}
+
+form {
+    margin: 10px 0;
 }

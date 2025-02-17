@@ -37,7 +37,7 @@ def teacher_login():
     host="localhost",
     user="root",
     password="1394",
-    database="attendance"
+    database="number"
 )
         user,passwords=input("Enter username and password: ").split()
         mycursor=db.cursor()
