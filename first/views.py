@@ -187,7 +187,6 @@ def sections(sec):
 #     return render(request,"data.html",{"values":values})
 
 
-
 def item_list(request):
     items = Use.objects.all()  # Fetch all records from the Item table
     return render(request, 'data.html', {'items': items})
