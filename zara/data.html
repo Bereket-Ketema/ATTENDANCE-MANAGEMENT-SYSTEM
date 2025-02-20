@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Students in {{ section }}</title>
+  <style>
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
 </head>
 <body>
-
-
-    <h1 style="text-align: center;">Item List</h1>
-    <div style="display: flex; justify-content:center;align-items:center;">
-        <table style="width:900px;border:1px solid black ;border-collapse: collapse;">
-            <thead>
-                <tr style="border: 1px solid black;
-  border-collapse: collapse;">
-                    <th style="border: 1px solid black;
-  border-collapse: collapse;">Name</th>
-                    <th style="border: 1px solid black;
-  border-collapse: collapse;">lastname</th>
-                    <th style="border: 1px solid black;
-  border-collapse: collapse;">user_name</th>
-                    <th style="border: 1px solid black;
-  border-collapse: collapse;">ID</th>
-                    <th style="border: 1px solid black;
-  border-collapse: collapse;">Department</th>
-                    <th style="border: 1px solid black;
-  border-collapse: collapse;">Attendance</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in items %}
-                <tr style="border: 1px solid black;
-  border-collapse: collapse;">
-                    <td style="border: 1px solid black;
-  border-collapse: collapse;">{{ item.fname }}</td>
-                    <td style="border: 1px solid black;
-  border-collapse: collapse;">{{ item.lname }}</td>
-                    <td style="border: 1px solid black;
-  border-collapse: collapse;">{{ item.users }}</td>
-                    <td style="border: 1px solid black;
-  border-collapse: collapse;">{{ item.ts_id }}</td>
-                    <td style="border: 1px solid black;
-  border-collapse: collapse;">{{ item.dept }}</td>
-                    <td><input type="radio"></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    
+  <h1 style="text-align: center;">Students in {{ section }}</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>User Name</th>
+        <th>Gender</th>
+        <th>Last Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in person %}
+        <tr>
+          <td>{{ student.s_id }}</td>
+          <td>{{ student.fname }} {{ student.lname }}</td>
+          <td>{{ student.gender }}</td>
+          <td>{{ student.lname }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="4">No students found for this section.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </body>
 </html>

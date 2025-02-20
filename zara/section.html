@@ -6,10 +6,12 @@
 </head>
 <body>
     <h1>SELECT SECTION</h1><br><br>
-    <!-- {%for sec in sections%}
-    <form action="item_list">
-        <button>{{sec}}</button><br><br>
+    <form action="section" method="POST">
+        {% csrf_token %}
+        <button name="section" value="1">section1</button><br><br>
+        <button name="section" value="2">section2</button><br><br>
+        <button name="section" value="3">section3</button><br><br>
+        <button name="section" value="4">section4</button><br><br>
     </form>
-    {% endfor %} -->
 </body>
 </html>

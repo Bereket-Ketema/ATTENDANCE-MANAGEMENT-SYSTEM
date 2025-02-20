@@ -19,7 +19,8 @@ def stud_log(request):
     return render(request,'s_login.html')
 def about(request):
     return render(request,'about.html')
-
+def t_login(request):
+    return render(request,'t_login.html')
 def student_login(request):
     if request.method == "POST":
         # Get the submitted password
@@ -65,56 +66,11 @@ def student_sign(request):
   return render(request,'s_sign.html')
 
 
-def t_login(request):
-    names=Use()
-    names.fname="Bereket"
-    return render(request,'t_login.html',{'names':names.fname})
 ##########################################
 
 def section(request):
-    section=Section()
-    return render(request,'section.html',{'section':section})
-
-def sec(request):
-    db=mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="1394",
-    database="student"
-)
-    studs=Use()
-    studs.sect=request.POST['section']
-    studs.sect=str(studs.sect)
-    sections="section"+studs.sect
-    mycursor=db.cursor()
-    mycursor.execute("SELECT s_name,s_lname,s_id,gender,department FROM {}".format(sections))
-    sect=Are()
-    secs=[]
-    for i in mycursor.fetchall():
-        i=i[0]
-        secs.append(i)
-    db.commit()
-    mycursor.close()
-    db.close()
-    return render(request,'data.html',{"section":sect})
-    
-def sections(sec):
-    db=mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="1394",
-    database="student"
-)
-    mycursor=db.cursor()
-    mycursor.execute("show tables")
-    for i in mycursor.fetchall():
-        sec.append(i[0]) 
-    db.commit()
-    mycursor.close()
-    db.close()
-    return sec
+ if request.method=='POST':
+    sections=Use.objects.filter(sect=request.POST['section'])
+    return render(request, 'data.html',{'person':sections})
 
 
-def item_list(request):
-    items = Use.objects.all()  # Fetch all records from the Item table
-    return render(request, 'data.html', {'items': items})
