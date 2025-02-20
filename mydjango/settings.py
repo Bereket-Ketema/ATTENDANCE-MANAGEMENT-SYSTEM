@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': 'student',
         'USER':'root',
         'PASSWORD':'1394',
-        'HOST':'localhost'
+        'HOST':'localhost',
     }
 }
 

@@ -133,8 +133,45 @@ def student_login():
     db.commit()
     mycursor.close()
     db.close()
-from first.models import Are
+
+def teacher():
+    db=mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="1394",
+    database="attendance"
+)  
+    t_name,t_lname,t_id,gender,passwordss,department=input().split()
+    mycursor=db.cursor()
+    mycursor.execute("INSERT INTO teacher VALUES (%s, %s,%s,%s, %s,%s)",(t_name,t_lname,t_id,gender,passwordss,department))
+    db.commit()
+    mycursor.close()
+    db.close()
+
+# #Teacher sign
+# def teacher(request):
+#     db=mysql.connector.connect(
+#     host="localhost",
+#     user="root",
+#     password="1394",
+#     database="attendance"
+# ) 
+#     if request.method == 'POST':
+#         t_name=request.POST['fname']
+#         t_lname=request.POST.get('lname')
+#         t_id=request.POST.get('t_id')
+#         gender=request.POST.get('gender')
+#         passwordss=request.POST.get('passwords')
+#         department=request.POST.get('department')
+#         # t_name,t_lname,t_id,gender,passwordss,department=input("enter them: ").split()
+#         mycursor=db.cursor()
+#         mycursor.execute("INSERT INTO teacher VALUES (%s, %s,%s,%s, %s,%s)",(t_name,t_lname,t_id,gender,passwordss,department))
+#         db.commit()
+#         mycursor.close()
+#         db.close()
+#         #Redirect to the view page after submission
+#         return render(request,'t_login.html')
+#     return render(request,'t_sign.html')
 
 # Check if there are any records
-print(Are.objects.all())
-student_login()
+teacher()

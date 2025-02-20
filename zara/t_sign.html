@@ -14,7 +14,7 @@
         <h2 class="sub-heading">Teachers Sign-Up Page</h2>
 
         <!-- Sign-Up Form -->
-        <form action="teacher" method="post" id="teacher">
+        <form action="teacher" method="POST" id="teacher">
             {% csrf_token %}
             <label for="fname">First Name:</label>
             <input type="text" id="fname" placeholder="First name" name="fname" required>
@@ -46,6 +46,6 @@
     </div>
 
     <!-- JS Script -->
-    <script src="{% static 'animate.js' %}"></script>
+    <!-- <script src="{% static 'animate.js' %}"></script> -->
 </body>
 </html>
