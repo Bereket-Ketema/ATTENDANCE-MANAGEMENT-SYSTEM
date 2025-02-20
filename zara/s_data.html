@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learner Attendance</title>
+  {% load static %}
+    <link rel="stylesheet" href="{% static 's_data.css' %}">
 </head>
 <body>
-    <table border="3" style="position: absolute;top: 30%; left: 10%;" >
-        <tr align="center">
-            <th width="150">Name</th>
-            <th width="150">Fname</th>
-            <th width="150">Department</th>
-            <th width="150">Batch</th>
-            <th width="150">Attendance</th>
-            <th width="150">day</th>
+  <div class="container">
+    <h1>Learner Attendance Record</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Fname</th>
+          <th>Department</th>
+          <th>Batch</th>
+          <th>Attendance</th>
+          <th>Date</th>
         </tr>
-        <tr align="center" class="r1">
-            <th width="300" height="50">{{learner.fname}}</th>
-            <th width="300">{{learner.lname}}</th>
-            <th width="300">{{learner.gender}}</th>
-            <th width="300">{{learner.dept}}</th>
-            <th width="300">filed</th>
-            <th width="300">01/01/2025</th>
+      </thead>
+      <tbody>
+        <tr class="r1">
+          <td data-label="Name">{{ learner.fname }}</td>
+          <td data-label="Fname">{{ learner.lname }}</td>
+          <td data-label="Department">{{ learner.dept }}</td>
+          <td data-label="Batch">Third</td>
+          <td data-label="Attendance">Filed</td>
+          <td data-label="Date">01/01/2025</td>
         </tr>
+        <!-- You can add more rows here if needed -->
+      </tbody>
     </table>
+  </div>
 </body>
 </html>
